@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padding</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        .section{
+            background-color: rgb(219, 33, 33);
+        }
+
+       .bg{
+            background: linear-gradient(135deg,rgb(241, 202, 202),10%,
+                                        transparent 0,                            
+                                        transparent 50%,
+                                        #75a5ac99 0,
+                                        #48bdad99 60%,
+                                        transparent );
+            background-size: 7.07px 7.07px;
+        }
+
+        div.parent {
+            position: absolute;
+            height: 340px;
+            left: 50%;
+            transform: translateX(-50%) ;
+            width: 380px;
+        }
+
+        div.child {
+            background-color: rgb(255, 255, 255,0.5);
+            height: 200px;
+            font-size: 4rem;
+            text-align: center;
+            line-height: 12rem;
+            margin: 70px auto;        
+
+            /* Y Axis (Vertical) */
+            padding-left: 50px;
+            padding: 0 0 0 50px;
+            width: 200px;
+        }
+
+        div.child span{
+            background-color: rgb(113, 133, 113);
+
+            /*esta es la forma larga*/
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+
+            /*esta es la forma corta une :top right bottom left*/
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html"> 💠 </a>Padding</h1>
+        </header>
+        <section>
+           <div class="parent bg">
+               <div class="child">
+                   <span>box</span>
+                </div>
+           </div>
+        </section>
+    </main>
+</body>
+</html>
