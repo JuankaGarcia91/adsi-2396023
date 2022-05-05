@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Kufam:wght@100;200;300;400;500;600;700;800;900&family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background: linear-gradient(rgb(255, 255, 255) 30%,#17a053);
+    font-family: kanit;
+    color: #333;
+    min-height: 100vh;    
+}
+

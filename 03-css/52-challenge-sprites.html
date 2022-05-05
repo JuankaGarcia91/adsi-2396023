@@ -5,16 +5,132 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenge Sprites</title>
-    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/challenger_sprite.css">
+    <style>
+        section {
+            background: url(images/Bubbles-Transparent-File.png) no-repeat center;
+            min-height: 100vh;
+            background-size: contain;
+        }
+        div.logo {
+            background: url(images/spriteweb.png) no-repeat;    
+            margin: 30px auto;
+            width: 250px;
+            height: 200px;
+        }
+
+        section {
+            margin: 1rem;
+        }
+
+        section div {            
+            width: 820px;
+            margin: 0 auto;
+        }
+
+
+        section div nav.boton{
+            display: flex;
+            gap: 2rem;            
+            justify-content: center;
+        }
+
+        section div nav.boton a:link,
+        section div nav.boton a:visited {
+            background-color: #17a053;
+            padding: 1rem 2rem;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        section div nav.boton a:hover {
+            background-color: #e2e2e2;
+            color: #17a053;            
+        }
+
+        section div div {
+            background-color: #00000088;
+            height: 206px;
+        }
+        
+        section div div nav div.img1 {
+            background-image: url(images/spriteweb.png);
+            width: 260px;
+            height: 180px;
+            background-position: -500px -25px;            
+            position: relative;
+            top: 12px;
+            left: -269px;                       
+        }      
+
+        section div div nav div.img2 {
+            background-image: url(images/spriteweb.png);
+            width: 260px;
+            height: 180px;
+            background-position: -500px -25px;
+            position: relative;
+            top: -188px;
+            left: 0px;     
+        }
+
+        section div div nav div.img3 {
+            background-image: url(images/spriteweb.png);
+            width: 260px;
+            height: 180px;
+            background-position: -500px -25px; 
+            position: relative;
+            top: -388px;
+            left: 269px;           
+        }
+
+        nav div h2.text1 {
+            background-color: #ffffff88;
+            padding: 1rem 2rem;
+            color: #000000;
+            text-decoration: none;
+            width: 196px;
+            height: 35px; 
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        section div div nav div h2.tex1:hover {
+            background-color: #e2e2e2;
+            color: #17a053;
+            text-align: center;            
+        }
+        
+    </style>
 </head>
 <body>
     <main>
-        <header>
-            <h1><a href="index.html">💠</a>Challenge Sprites</h1>
-        </header>
+        <div class="logo"></div>
+        <br>
         <section>
-            
-        </section>
+            <div>
+                <nav class="boton">
+                    <a href="">Inicio</a>
+                    <a href="">Nosotros</a>
+                    <a href="">Portafolio</a>
+                    <a href="">Servicio</a>
+                    <a href="">Servicio</a>
+                </nav>
+                <br>                
+                <div>
+                    <nav class="img">
+                        <div class="img1">
+                            <h2 class="text1">Sprite 1</h2>
+                        </div>
+                        <div class="img2">
+                            <h2 class="text1">Sprite 1</h2>
+                        </div>
+                        <div class="img3">
+                            <h2 class="text1">Sprite 1</h2>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </section>        
     </main>
 </body>
 </html>
