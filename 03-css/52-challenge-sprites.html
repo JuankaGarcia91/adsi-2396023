@@ -10,50 +10,52 @@
         section {
             background: url(images/Bubbles-Transparent-File.png) no-repeat center;
             min-height: 100vh;
-            background-size: contain;
+            background-size: contain;            
         }
+
+        /*-- logo --*/
+
         div.logo {
             background: url(images/spriteweb.png) no-repeat;    
             margin: 30px auto;
             width: 250px;
             height: 200px;
-        }
+        }            
 
-        section {
-            margin: 1rem;
-        }
-
-        section div {            
+        div {                     
             width: 820px;
             margin: 0 auto;
         }
 
+        /*--botones--*/
 
-        section div nav.boton{
+        div nav.boton{
             display: flex;
             gap: 2rem;            
             justify-content: center;
         }
 
-        section div nav.boton a:link,
-        section div nav.boton a:visited {
+        div nav.boton a:link,
+        div nav.boton a:visited {
             background-color: #17a053;
             padding: 1rem 2rem;
             color: #ffffff;
             text-decoration: none;
         }
 
-        section div nav.boton a:hover {
+        div nav.boton a:hover {
             background-color: #e2e2e2;
             color: #17a053;            
         }
 
-        section div div {
+        /*--producto*/
+
+        div div.img {
             background-color: #00000088;
             height: 206px;
         }
         
-        section div div nav div.img1 {
+        div div nav div.img1 {
             background-image: url(images/spriteweb.png);
             width: 260px;
             height: 180px;
@@ -63,7 +65,7 @@
             left: -269px;                       
         }      
 
-        section div div nav div.img2 {
+        div div nav div.img2 {
             background-image: url(images/spriteweb.png);
             width: 260px;
             height: 180px;
@@ -73,7 +75,7 @@
             left: 0px;     
         }
 
-        section div div nav div.img3 {
+        div div nav div.img3 {
             background-image: url(images/spriteweb.png);
             width: 260px;
             height: 180px;
@@ -94,11 +96,91 @@
             cursor: pointer;
         }
         
-        section div div nav div h2.tex1:hover {
+        div div nav div h2.tex1:hover {
             background-color: #e2e2e2;
             color: #17a053;
             text-align: center;            
         }
+
+        /*--bloques texto*/
+
+        nav.bloque2 {
+            background-color: #00000088;
+            height: 280px;
+            margin: 0 auto;
+        }
+
+        nav.fondob {
+            background-color: #ffffff;
+            height: 200px;
+            width: 750px;
+            margin: 0 auto;
+        }
+
+        div.logo2 {
+            background: url(images/spriteweb.png) no-repeat;    
+            margin: 20px auto;
+            width: 90px;
+            height: 150px;
+            float: left;
+            background-position: -290px -510px;
+            position: relative;
+            top: 40px;
+            left: 0px;
+        } 
+
+        div.lata {
+            background: url(images/spriteweb.png) no-repeat;    
+            margin: 20px auto;
+            width: 100px;
+            height: 160px;
+            float: right;
+            background-position: -100px -210px;
+            
+            top: 0px;
+            left: 0px;
+        }
+
+        p {
+            text-align: justify;
+            padding: 10px;
+        }
+
+        /*--bloque logo y enlaces--*/
+
+        div.bloque3 {
+            background-color: #ffffff;
+            height: 250px;
+            margin: 0 auto;
+        }
+
+        div.logo3 {
+            background: url(images/spriteweb.png) no-repeat;    
+            margin: 20px auto;
+            width: 260px;
+            height: 180px;            
+            background-position: -500px -420px;     
+        }
+
+        nav.boton2 {
+            margin: 0 auto;    
+        }
+
+        nav.boton2 a:link,
+        nav.boton2 a:visited {
+            background-color: #044d013a;
+            color: rgb(7, 7, 7);
+            margin: 0 auto;            
+            text-decoration: none;            
+            padding: 0.5rem;
+            transition: all 0.2s ease-in;
+            border-bottom: 4px solid #17a053;                       
+        }        
+
+        nav.boton2 a:hover{
+            background-color: rgb(209, 209, 209);            
+            color: rgb(253, 253, 253);            
+        }  
         
     </style>
 </head>
@@ -113,10 +195,10 @@
                     <a href="">Nosotros</a>
                     <a href="">Portafolio</a>
                     <a href="">Servicio</a>
-                    <a href="">Servicio</a>
+                    <a href="">Contacto</a>
                 </nav>
                 <br>                
-                <div>
+                <div class="img">
                     <nav class="img">
                         <div class="img1">
                             <h2 class="text1">Sprite 1</h2>
@@ -129,8 +211,61 @@
                         </div>
                     </nav>
                 </div>
-            </div>
-        </section>        
+                <br>
+                <br>
+                <nav class="bloque2">
+                    <br>
+                    <nav class="fondob">
+                        <div class="logo2">        
+                        </div>
+                        <div class="lata">        
+                        </div>
+                        <p>                            
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, placeat? Laborum accusantium quisquam alias? Dignissimos excepturi cumque veritatis consequuntur blanditiis, praesentium quibusdam libero cupiditate soluta itaque sequi, consectetur aperiam. Ducimus?
+                            Eos iste saepe, iusto recusandae amet excepturi. Beatae dolor pariatur odit. Commodi maiores sunt veniam, porro deserunt reprehenderit. Corrupti vero deleniti quae ipsam consequatur, in voluptatibus labore quos repellat eos?                            
+                        </p>                        
+                    </nav>
+                </nav>
+                <nav class="bloque2">
+                    <br>
+                    <nav class="fondob">
+                        <div class="logo2">        
+                        </div>
+                        <div class="lata">        
+                        </div>
+                        <p>                            
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, placeat? Laborum accusantium quisquam alias? Dignissimos excepturi cumque veritatis consequuntur blanditiis, praesentium quibusdam libero cupiditate soluta itaque sequi, consectetur aperiam. Ducimus?
+                            Eos iste saepe, iusto recusandae amet excepturi. Beatae dolor pariatur odit. Commodi maiores sunt veniam, porro deserunt reprehenderit. Corrupti vero deleniti quae ipsam consequatur, in voluptatibus labore quos repellat eos?                            
+                        </p>                        
+                    </nav>
+                </nav>
+                <nav class="bloque2">
+                    <br>
+                    <nav class="fondob">
+                        <div class="logo2">        
+                        </div>
+                        <div class="lata">        
+                        </div>
+                        <p>                           
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, placeat? Laborum accusantium quisquam alias? Dignissimos excepturi cumque veritatis consequuntur blanditiis, praesentium quibusdam libero cupiditate soluta itaque sequi, consectetur aperiam. Ducimus?
+                            Eos iste saepe, iusto recusandae amet excepturi. Beatae dolor pariatur odit. Commodi maiores sunt veniam, porro deserunt reprehenderit. Corrupti vero deleniti quae ipsam consequatur, in voluptatibus labore quos repellat eos?                            
+                        </p>                        
+                    </nav>
+                </nav>
+                <br>                
+                <div class="bloque3">
+                    <div class="logo3">
+                    </div>
+                    <nav class="boton2">
+                        <a href="">Inicio</a>
+                        <a href="">Nosotros</a>
+                        <a href="">Portafolio</a>
+                        <a href="">Servicio</a>
+                        <a href="">Contacto</a>
+                    </nav>
+                </div>            
+            </div>                        
+        </section>              
     </main>
 </body>
 </html>
