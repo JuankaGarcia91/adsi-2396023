@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg Gradient</title>
+    <link rel="stylesheet" href="css/mastercss3.css">
+    <style>
+        div.box {
+            border: 2px dotted #fff;
+            height: 200px;
+        }
+
+        div.box1 { background: linear-gradient(to top, red, blue);}
+        div.box2 { background: linear-gradient(45deg, red, blue);}
+        div.box3 { background: linear-gradient(yellow 30%, blue 60%, red 100%);}
+        div.box3-1 { background: linear-gradient(yellow 40%, blue 40%, blue 70%, red 70%);}
+        div.box4 { background: linear-gradient(to right, #000 50%, #fff 0% );
+                   background-size: 50px 100px}
+        div.box5 { background: radial-gradient(circle, red, blue);}
+        div.box6 { 
+            background: radial-gradient(#fff 20%,
+                                        #000 20%,
+                                        #000 40%,
+                                        #fff 40%,
+                                        #fff 60%,
+                                        #000 60%,
+                                        #000 80%,
+                                        #fff 80%);}
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html">🌐</a>Bg Gradient</h1>
+        </header>
+        <section>
+            <h3>Linear Gradient(to top, colo1, color2)</h3>
+            <div class="box box1"></div>
+            <!-- -->
+            <h3>Linear Gradient(45deg, color1, color2)</h3>
+            <div class="box box2"></div>            
+            <!-- -->
+            <h3>Colombia Flag</h3>
+            <div class="box box3"></div>
+            <br>
+            <div class="box box3-1"></div>
+            <!-- -->
+            <h3>Vertical Line</h3>
+            <div class="box box4"></div>
+            <!-- -->
+            <h3>Radial Gradient(circle, color1, color2)</h3>
+            <div class="box box5"></div>
+            <!-- -->
+            <h3>Bulleye</h3>
+            <div class="box box6"></div>
+            <!-- -->
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg Clip</title>
+    <link rel="stylesheet" href="css/mastercss3.css">
+    <style>
+        figure.title {
+            background: url(img/vg.jpg) no-repeat center;
+            background-size: cover;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;            
+            height: 400px;
+            font-size: 80rem;
+            font-weight: 800;
+            margin: 10px auto;
+            text-align: center;
+            text-transform: uppercase;
+            width: 80%;
+        }
+
+        @media (max-width: 1024px) {
+            figure.title {
+                font-size: 220px;
+            }
+        }      
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html">🌐</a>Bg Clip</h1>
+        </header>
+        <section>
+            <figure class="title">ADSI</figure>
+        </section>
+    </main>
+</body>
+</html>
