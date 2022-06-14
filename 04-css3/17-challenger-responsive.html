@@ -4,15 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenger Responsive</title>    
+    <title>Ford Mustang Lujo</title>
+    <style>
+        body {
+            background: linear-gradient(rgb(230, 230, 230), black);
+            height: 300vh;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        h1 {
+            background: url(img/ford/marcasgoma.jpg) no-repeat center;
+            background-size: cover;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;            
+            height: 300px;
+            font-size: 80rem;
+            font-weight: 750;
+            margin: 0 auto;
+            text-align: center;
+            text-transform: uppercase;
+            width: 80%;            
+        }
+
+        @media (max-width: 1000px) {
+            h1 {
+                font-size: 120px;
+                text-shadow: 0 0 80px rgb(0, 0, 0);              
+            }
+        }
+
+        h3 {
+            color: aliceblue;
+            text-align: center;
+            font-size: 40px;
+            text-shadow: 0 0 12px rgb(0, 0, 0);
+        }
+        
+        nav {
+            border: 2px solid red;
+            width: 1100px;
+            height: 250px;
+            margin: 0 auto;
+            background-color: rgb(161, 161, 161);
+        }          
+        /* header */
+    </style>   
 </head>
 <body>
     <main>
         <header>
-            <h1><a href="index.html">🌐</a>Challenger Responsive</h1>
+            <a href="index.html">🌐</a>
+            <h1>FORD MUSTANG</h1>
+            <h3>Autos de lujo siglo XX</h3>            
         </header>
         <section>
-            
+            <nav>
+                <a href="img1">
+                    <h2>Ford Mustang 1914</h2>
+                </a>
+                <a href="img2">
+                    <h2>Ford Mustang Fastback Commer Engine 1916</h2>
+                </a>
+                <a href="img3">
+                    <h2>Ford Mustang Shelby GT500 Eleanor 1967</h2>
+                </a>
+                <a href="img4">
+                    <h2>Ford Mustang Boss 429 1970</h2>
+                </a>
+            </nav>
         </section>
     </main>
 </body>
