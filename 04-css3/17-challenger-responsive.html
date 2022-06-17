@@ -7,69 +7,73 @@
     <title>Challenge Sprites</title>
     <link rel="stylesheet" href="css/challenger_sprite.css">
     <style>
-        body {
-            background: linear-gradient(#333 -800px, rgb(255, 255, 255) 500px, #333);
-                                 
+        html{
+            scroll-behavior: smooth;
         }
 
-        div.logomustang {
-            border: 2px solid red;
-            background: url(img/ford/logomustang.png) no-repeat;
-            height: 600px;
-            width: 600px;           
-            background-size: contain;
+        body {
+            background:#00000077;
+            background-image: url(img/ford/linea.png);
+            background-repeat: repeat-y;
+            background-size: 130px 100px;
+            background-attachment:scroll;
             background-position: right;
-            position: relative;
-            top: -700px;
-            left: 1200px;
-            z-index: 1;
+            padding: 10px;
+
+        }
+
+        /*-- logo --*/ 
+
+        div.barra {
+            background-color: #ffffff99;
+            height: 250px;
+            width: 100%;
+            background-image: url(img/ford/linea2.png);
+            background-repeat: repeat-x;
+            background-size: 100% 100px;            
+            background-position: right;            
         }       
 
-        /*-- logo --*/      
-        
-
         main div.logo1 {
-            background: url(img/ford/logoford.png) no-repeat;    
+            background: url(img/ford/logoford.png) no-repeat center;    
             margin: 0px auto;
             width: 357px;
             height: 134px;
-            border: 2px solid red;
+            padding: 12px 0px;
         }    
         
         main div.logo2 {
-            background: url(img/ford/mustang.png) no-repeat;
-            border: 2px solid red;                     
-            width: 355px;
+            background: url(img/ford/mustang.png) no-repeat center; width: 355px;
             height: 100px;
-            margin: 0 auto;
+            margin: 0px auto;
         }  
         
         /*productos*/
 
         nav.img {
-            background-color: black; 
-            margin: 30px auto;           
-            border: 2px solid red;
+            background-color: #000000;
+            border-radius: 12px;
+            margin: 30px auto; 
             height: 200px;
-            width: 1245px;           
+            width: 1245px; 
+            padding: 10px;          
         }
 
         nav div.img1 {
             background: url(img/ford/ford1.jpg) no-repeat;
             margin: 5px;
-            border: 2px solid red;
             height: 185px;
             width: 300px;
             background-size: contain;
             background-position: 0px 0px;
             top: 12px;
             left: -269px;
+            border: 2px solid #000000;
         }
 
         nav div.img2 {
             background: url(img/ford/ford2.jpg) no-repeat;
             margin: 5px;
-            border: 2px solid red;
             height: 185px;
             width: 300px;
             background-size: contain;
@@ -77,12 +81,12 @@
             top: -194px;
             left: 310px;
             position: relative;
+            border: 2px solid #000000;
         }
 
         nav div.img3 {
             background: url(img/ford/ford3.jpg) no-repeat;
             margin: 5px;
-            border: 2px solid red;
             height: 185px;
             width: 300px;
             background-size: contain;
@@ -90,12 +94,12 @@
             top: -388px;
             left: 620px;
             position: relative;
+            border: 2px solid #000000;
         }
 
         nav div.img4 {
             background: url(img/ford/ford4.jpg) no-repeat;
             margin: 5px;
-            border: 2px solid red;
             height: 185px;
             width: 300px;
             background-size: contain;
@@ -103,121 +107,250 @@
             top: -582px;
             left: 930px;
             position: relative;
+            border: 2px solid #000000;
         }
 
         
-        h2.text1 {            
-            height: 30px; 
-            background-color: #ffffff88;
-            padding: 1.5rem 1rem;
+        h2.text1 {
+            height: 25px;
+            width: 282px;
+            font-size: 20px; 
+            background-color: #ffffff55;
+            padding: 2.0rem 0.5rem;
             color: #000000;
             text-decoration: none;
             text-align: center;
             cursor: pointer;            
-            margin-top: 0px;           
+            margin-top: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;         
         }    
         
         h2.text1:hover {
+            height: 25px;
+            width: 282px;
+            font-size: 20px;
             background-color: #31313188;
-            padding: 1.5rem 1rem;
+            padding: 2.0rem 0.5rem;
             color: #ffffff;
             text-decoration: none;             
             text-align: center;
             cursor: pointer;
-            margin-top: 0px;
+            margin-top: 75px;
+            text-align: center;
+            transition: 2s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
         }
         
         /*cuadro de texto*/
 
-        div.cuadro {
-            background: #7c7c7c77;            
-            width: 890px;
-            height: 470px;
-            margin: 100px;
-            border: 2px solid red;
+        div.fondo {   
+            background-color: #ffffff99;
+            height: 1205px;
+            padding: 1px;
         }
 
-        div nav.bloque2 {
+        div.cuadro { 
+            margin-top: 100px;           
+            width: 1260px;
+            height: 1150px;
+            margin: 25px;
+            color: #fff;
+            background: url(img/ford/logomustang.png) no-repeat;
+            background-attachment: fixed;
+            background-position: 770px 120px;
+            background-size: 500px 500px; 
+        }
+
+        div nav.bloque2 {            
             background: #000000;
+            margin: 10px;
+            height: 250px;
+            width: 650px;
+            position: left;
+            padding: 10px;
+            *overflow: scroll;
+        }
+
+        nav div.mustang1 {
+            background-image: url(img/ford/ford1.jpg);
+            background-size: 330px 200px ;
+            background-repeat: no-repeat;
+            margin-left: 20px;
+            margin-top: 20px;
+            height: 200px;
+            width: 330px;
+            float: left;
+            box-shadow: 0 0 12px #ffffff;
+        }
+
+        nav div.mustang2 {
+            background-image: url(img/ford/ford2.jpg);
+            background-size: 330px 200px ;
+            background-repeat: no-repeat;
+            margin-left: 20px;
+            margin-top: 20px;
+            height: 200px;
+            width: 330px;
+            float: left;
+            box-shadow: 0 0 12px #ffffff;
+        }
+
+        nav div.mustang3 {
+            background-image: url(img/ford/ford3.jpg);
+            background-size: 330px 200px ;
+            background-repeat: no-repeat;
+            margin-left: 20px;
+            margin-top: 20px;
+            height: 200px;
+            width: 330px;
+            float: left;
+            box-shadow: 0 0 12px #ffffff;
+        }
+
+        nav div.mustang4 {
+            background-image: url(img/ford/ford4.jpg);
+            background-size: 330px 200px ;
+            background-repeat: no-repeat;
+            margin-left: 20px;
+            margin-top: 20px;
+            height: 200px;
+            width: 330px;
+            float: left;
+            box-shadow: 0 0 12px #ffffff;
+        }
+
+        div.bloquetext {                        
+            overflow-y: scroll;
+            height: 250px;
+        }
+
+        p.text::-webkit-scrollbar {
+            background: #585858;
+            width: 7px;
+        }
+
+        h1.titulo {
+            margin: 5px auto;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 5px;
+        }
+
+        p.text {
             margin: 10px auto;
-            height: 100px;
-            width: 800px;
-            border: 2px solid red;
+            text-align: justify;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 10px;
+            font-weight: normal; 
+            margin-left: 10px;           
+        }
+
+        /*boton menu*/
+
+        nav.boton {            
+            margin: 40px auto;
+            width: 200px;
         }
 
 
+        nav.boton a:link,
+        nav.boton a:visited {
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0 auto;            
+            text-decoration: none;            
+            padding: 0.5rem;
+            transition: all 0.2s ease-in; 
+            font-size: larger;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana;                    
+        }        
+
+        nav.boton a:hover{
+            background-color: #d1d1d1;            
+            color: #000000;            
+        }
+
+        
 
         
     </style>
 </head>
-<body>
-    <main>
-        <div class="barra">        
+<body>       
+    <main>        
+        <div class="barra box">        
             <div class="logo1"></div>
             <div class="logo2"></div>
         </div>           
-            <br>
-        <section>                                    
-                <nav class="img">
-                    <div class="img1">
-                        <h2 class="text1">Ford Mustang 1914</h2>
-                    </div>
-                    <div class="img2">
-                        <h2 class="text1">Ford Mustang Fastback 1965</h2>
-                    </div>
-                    <div class="img3">
-                        <h2 class="text1">Ford Mustang Shelby GT500 1967</h2>
-                    </div>
-                    <div class="img4">
-                        <h2 class="text1">Ford Mustang Boss 1970</h2>
-                    </div>
-                </nav>
+            <br>                                           
+        <nav class="img">
+            <div class="img1">
+                <h2 class="text1">Ford Mustang 1914</h2>
+            </div>
+            <div class="img2">
+                <h2 class="text1">Ford Mustang Fastback 1965</h2>
+            </div>
+            <div class="img3">
+                <h2 class="text1">Ford Mustang Shelby GT500 1967</h2>
+            </div>
+            <div class="img4">
+                <h2 class="text1">Ford Mustang Boss 1970</h2>
+            </div>
+        </nav>            
+        <div class="fondo">                 
             <div class="cuadro">
                 <nav class="bloque2"> 
-                        <div class="mustang1">        
-                        </div>                        
-                        <p>                            
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, placeat? Laborum accusantium quisquam alias? Dignissimos excepturi cumque veritatis consequuntur blanditiis, praesentium quibusdam libero cupiditate soluta itaque sequi, consectetur aperiam. Ducimus?
-                            Eos iste saepe, iusto recusandae amet excepturi. Beatae dolor pariatur odit. Commodi maiores sunt veniam, porro deserunt reprehenderit. Corrupti vero deleniti quae ipsam consequatur, in voluptatibus labore quos repellat eos?                            
-                        </p>
+                        <div class="mustang1"></div>
+                            <div class="bloquetext">
+                                <h1 class="titulo">
+                                    Ford Mustang 1914
+                                </h1>                       
+                                <p class="text">                            
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, placeat? Laborum accusantium quisquam alias? Dignissimos excepturi cumque veritatis consequuntur blanditiis, praesentium quibusdam libero cupiditate soluta itaque sequi, consectetur aperiam. Ducimus?
+                                    Eos iste saepe, iusto recusandae amet excepturi. Beatae dolor pariatur odit. Commodi maiores sunt veniam, porro deserunt reprehenderit. Corrupti vero deleniti quae ipsam consequatur, in voluptatibus labore quos repellat eos?                            
+                                </p>
+                            </div>
                 </nav>
                 <nav class="bloque2"> 
-                        <div class="mustang2">        
-                        </div>
-                        <p>                            
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, placeat? Laborum accusantium quisquam alias? Dignissimos excepturi cumque veritatis consequuntur blanditiis, praesentium quibusdam libero cupiditate soluta itaque sequi, consectetur aperiam. Ducimus?
-                            Eos iste saepe, iusto recusandae amet excepturi. Beatae dolor pariatur odit. Commodi maiores sunt veniam, porro deserunt reprehenderit. Corrupti vero deleniti quae ipsam consequatur, in voluptatibus labore quos repellat eos?                            
-                        </p> 
+                        <div class="mustang2"></div>
+                            <div class="bloquetext">
+                                <h1 class="titulo">
+                                    Ford Mustang Fastback 1965
+                                </h1>
+                                <p class="text">                            
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, placeat? Laborum accusantium quisquam alias? Dignissimos excepturi cumque veritatis consequuntur blanditiis, praesentium quibusdam libero cupiditate soluta itaque sequi, consectetur aperiam. Ducimus?
+                                    Eos iste saepe, iusto recusandae amet excepturi. Beatae dolor pariatur odit. Commodi maiores sunt veniam, porro deserunt reprehenderit. Corrupti vero deleniti quae ipsam consequatur, in voluptatibus labore quos repellat eos?                            
+                                </p>
+                            </div>
                 </nav>
                 <nav class="bloque2">
-                        <div class="mustang3">        
-                        </div>
-                        <p>                           
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, placeat? Laborum accusantium quisquam alias? Dignissimos excepturi cumque veritatis consequuntur blanditiis, praesentium quibusdam libero cupiditate soluta itaque sequi, consectetur aperiam. Ducimus?
-                            Eos iste saepe, iusto recusandae amet excepturi. Beatae dolor pariatur odit. Commodi maiores sunt veniam, porro deserunt reprehenderit. Corrupti vero deleniti quae ipsam consequatur, in voluptatibus labore quos repellat eos?                            
-                        </p>  
+                        <div class="mustang3"></div>
+                            <div class="bloquetext">
+                                <h1 class="titulo">
+                                    Ford Mustang Shelby GT500 1967
+                                </h1>
+                                <p class="text">                           
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, placeat? Laborum accusantium quisquam alias? Dignissimos excepturi cumque veritatis consequuntur blanditiis, praesentium quibusdam libero cupiditate soluta itaque sequi, consectetur aperiam. Ducimus?
+                                    Eos iste saepe, iusto recusandae amet excepturi. Beatae dolor pariatur odit. Commodi maiores sunt veniam, porro deserunt reprehenderit. Corrupti vero deleniti quae ipsam consequatur, in voluptatibus labore quos repellat eos?                            
+                                </p>
+                            </div>  
                 </nav>
                 <nav class="bloque2">
-                        <div class="mustang4">        
-                        </div>
-                        <p>                            
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, placeat? Laborum accusantium quisquam alias? Dignissimos excepturi cumque veritatis consequuntur blanditiis, praesentium quibusdam libero cupiditate soluta itaque sequi, consectetur aperiam. Ducimus?
-                            Eos iste saepe, iusto recusandae amet excepturi. Beatae dolor pariatur odit. Commodi maiores sunt veniam, porro deserunt reprehenderit. Corrupti vero deleniti quae ipsam consequatur, in voluptatibus labore quos repellat eos?                            
-                        </p> 
-                </nav>
+                        <div class="mustang4"></div>
+                            <div class="bloquetext">
+                                <h1 class="titulo">
+                                    Ford Mustang Boss 1970
+                                </h1>
+                                <p class="text">                            
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, placeat? Laborum accusantium quisquam alias? Dignissimos excepturi cumque veritatis consequuntur blanditiis, praesentium quibusdam libero cupiditate soluta itaque sequi, consectetur aperiam. Ducimus?
+                                    Eos iste saepe, iusto recusandae amet excepturi. Beatae dolor pariatur odit. Commodi maiores sunt veniam, porro deserunt reprehenderit. Corrupti vero deleniti quae ipsam consequatur, in voluptatibus labore quos repellat eos?                            
+                                </p> 
+                            </div>
+                </nav>                
             </div>
-                    <div class="logo5">
-                    </div>
-                    <nav class="boton2">
-                        <a href="">Inicio</a>
-                        <a href="">Nosotros</a>
-                        <a href="">Portafolio</a>
-                        <a href="">Servicio</a>
-                        <a href="">Contacto</a>
-                    </nav>
-                    <div class="logomustang"></div>
-                </div>              
-        </section>              
+                <nav class="boton">
+                    <a href="index.html">🌐 Menu Principal</a>
+                </nav>
+        </div>             
     </main>
 </body>
 </html>
