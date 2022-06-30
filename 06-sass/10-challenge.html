@@ -4,15 +4,218 @@
 	<meta charset="UTF-8">
 	<title>Challenger (SASS)</title>	
 	<link rel="stylesheet" href="css/10-challenger.css">
+	<style>
+		body {
+			background: url(imgs/colombia.png) no-repeat;
+			background-size: 100%;			
+			background-color: rgb(201, 201, 201);
+  			font-family: sans-serif;
+			padding: 30px;
+		}
+
+		/*--titulo--*/
+
+		.titulo {
+			text-align: center;
+			font-size: 70px;
+			font-family: tahoma;
+		}
+
+		strong {
+			background: linear-gradient(yellow 40%, blue 40%, blue 70%, red 70%);
+			text-shadow: 2px 2px 6px rgb(255, 255, 255);
+		}
+
+		/*--botones--*/
+
+		ul.botones {			
+			display: flex;
+            gap: 2rem;            
+            justify-content: center;							
+		}
+
+		ul.botones a {			
+			padding: 0.5rem 1rem;
+            color: #cccccc;
+            text-decoration: none;
+			border-radius: 30px;
+			border: 2px solid rgb(196, 196, 0);		
+		}
+
+		li {
+			margin: 30px;
+		}
+		
+		/*--contenido--*/		
+
+		div.contenido {
+			*border: 1px solid rgb(255, 0, 0);		
+			background: #ffffff99;
+			color: rgb(0, 0, 0);
+			padding: 30px;			
+			text-align: center;
+			width: 50%;
+			position: relative;
+			right: -100px;
+			top: 20px;			
+		}		
+
+		div.contenido2 {
+			*border: 1px solid rgb(255, 0, 0);			
+			background: #00000099;
+			color: #fff;
+			padding: 30px;			
+			text-align: center;
+			width: 50%;
+			position: relative;	
+			right: -500px;
+			top: 0;			
+		}
+
+		#menu-check {
+			display: none;
+		}
+		
+		#menu-check:not(:checked) ~ nav{
+			display: none;
+		}
+
+		#menu-check:checked ~ nav{
+			display: block;
+		}
+		
+		#menu {
+			border: 3px solid rgb(0, 0, 0);
+			border-radius: 0.6rem;
+			display: block;
+			color: rgb(0, 0, 0);
+			background-color: #fff;
+			font-size: 2rem;
+			font-weight: bold;
+			position:absolute;
+			right: 1rem;
+			top: 1rem;
+			width: 35px;
+			height: 45px;
+			text-align: center;
+			z-index: 9999;
+		}
+
+		#menu:hover {
+			color: white;
+			background: #000;
+		}
+
+		#menu-cerrar {
+			display: none;
+			margin: 5px;
+		}
+
+		#menu-check:checked ~ label #menu-abrir {
+			display: none;
+		}
+
+		#menu-check:checked ~ label #menu-cerrar {
+			display: block;
+		}
+
+		header div.contenedor nav {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			*width: 100%;
+			background-color: rgb(29, 0, 0);
+			padding-top: 20px;
+			opacity: 0.8;
+			color: #cccccc;
+		}
+
+		header div.contenedor nav ul a{
+			color: #cccccc;			
+		}
+
+		header div.contenedor nav ul,
+		header div.contenedor nav ul li {
+			display: block;
+			text-align: left;
+		}
+
+
+	</style>	
 </head>
 <body>
-	<main>
-		<header>
-			<h1>Challenger (SASS)</h1>
-		</header>
-		<section class="content">
-			<h2>Lorem Ipsum Dolor</h2>
-		</section>
-	</main>
+	<header>
+		<div class="contenedor">
+			<h1 class="titulo">Colombia <strong>MIA</strong></h1>
+			<input type="checkbox" id="menu-check">			
+			<label id="menu" for="menu-check">
+				<span id="menu-abrir">&#9776;</span>
+				<span id="menu-cerrar">X</span>
+			</label>
+			<nav>
+				<ul class="botones">
+					<li class="bt bt1"><a href="">Historia</a></li>
+					<li class="bt bt2"><a href="">Imagenes</a></li>
+					<li class="bt bt3"><a href="">Ciudades y departamentos</a></li>
+					<li class="bt4"><a href="">Contactenos</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section>
+		<div class="contenido">
+			<i>CORO</i>
+			<br>
+			Oh gloria inmarcesible 
+			Oh júbilo inmortal 
+			En surcos de dolores 
+			El bien germina ya. 
+			<br>
+			<br>		
+			<i>Primera estrofa.</i> 
+			<br>		
+			Cesó la horrible noche 
+			La libertad sublime 
+			Derrama las auroras 
+			De su invencible luz. 
+			La humanidad entera, 
+			Que entre cadenas gime, 
+			Comprende las palabras 
+			Del que murió en la cruz 
+			<br>
+			<br>	
+			<i>Segunda estrofa.</i>
+			<br>		
+			"Independencia" grita 
+			El mundo americano: 
+			Se baña en sangre de héroes 
+			La tierra de Colón. 
+			Pero este gran principio: "el rey no es soberano" 
+			Resuena, Y los que sufren 
+			Bendicen su pasión.
+		</div>		
+		<div class="contenido2">
+			<i>Tercera estrofa.</i> 
+			<br>
+			Del Orinoco el cauce 
+			Se colma de despojos, 
+			De sangre y llanto un río Se mira allí correr. 
+			En Bárbula no saben 
+			Las almas ni los ojos 
+			Si admiración o espanto 
+			Sentir o padecer. 
+			<br><br>
+			<i>Cuarta estrofa.</i>
+			<br>
+			A orillas del Caribe 
+			Hambriento un pueblo lucha Horrores prefiriendo 
+			A pérfida salud. 
+			Oh, sí de Cartagena 
+			La abnegación es mucha, 
+			Y escombros de la muerte 
+			desprecian su virtud. 
+		</div>
+	</section>
 </body>
 </html>
