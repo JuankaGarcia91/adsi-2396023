@@ -7,27 +7,97 @@ html{
 body {
     background: url(../img/javascript.png) no-repeat center;
     background-size: cover;
+    background-attachment: fixed;
     font-family: 'Kanit', sans-serif;
+    display: flex;
+    align-items: center;
+    overflow-y: hidden;
+    justify-content: center;
     font-weight: 200;
     min-height: 100vh;
 }
 
-main {
+main {    
+    border-radius: 1rem;
     margin: 5rem auto;
-    width: 80%;
-
+    width: 40rem;
 }
 
-header h1 {
-    background-color: #34006488;
-    color: rgb(255, 255, 255);
-    padding: 3rem;
+header h1 {        
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
     text-align: center;
-    border-bottom: 4px solid rgb(0, 129, 90);
+    background-color: #ffe600ce;
+    color: #000000;
+    padding: 3rem;    
+    border-bottom: 4px solid #960000;
 }
+
 header h1 a:link,
 header h1 a:visited {
-    background-color: #006b4b88;
+    display: flex;
+    color: #ffe600ce;
+    position: absolute;
+    left: 1rem;
+    text-decoration: none;
+    transition: transform 0.2 ease-in;
+}
+
+header h1 a:hover {
+    transform: translateX(-4px);
+}
+
+header h1 a svg {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    overflow-y: auto;
+    height: 490px;
+    gap: 0.4rem;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li a:link,
+nav li a:visited {
+    background-color: #0003;
+    border-radius: 2rem;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    align-items: center;
+    padding: 0.2rem;
+    transition: all 0.2s ease-in;
+}
+
+nav.menu {
+    background: #ffe600bd;
+    height: 494px;
+    display: flex;
+    padding: 1.3rem;
+    flex-direction: column;
+    border-color: #000000;
+    overflow-y: auto;
+    gap: 0.4rem;
+}
+nav li {
+    list-style: none;
+}
+
+nav li a:link,
+nav li a:visited {
+    background-color: #f5e71e59;  
     color: rgb(0, 0, 0);
     float: left;
     padding: 0 3px;
@@ -36,20 +106,7 @@ header h1 a:visited {
     transition: all 0.3s ease-in;
 }
 
-header h1 a:hover {
+nav :hover {
     background-color: #ffffffbb;
     transform: translateX(-20px);
-}
-
-section {
-    background-color: #000000bb;
-    color: rgb(199, 199, 199);
-    padding: 2rem;
-    min-height: 20rem
-}
-
-section h3 {
-    text-align: center;
-    padding-bottom: 10px;
-    border-bottom: 2px dotted #df3e16;
 }

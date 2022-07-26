@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/menu.css">
+    <title>Get Elements</title>
+    <style>
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        nav button {
+            background-color: #0006;
+            color: #fff6;
+            border: none;
+            font-family: kanit;
+            height: 40px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                      </svg>
+                </a>
+                Get Elements
+            </h1>
+        </header>
+        <section>
+            <h2 id="show-year"></h2>
+
+            <ul>
+                <li>Futboll</li>
+                <li>Bascketball</li>
+                <li>Tennis</li>
+            </ul>
+
+            <h2 id="show-deport"></h2>
+            <p class="paragraph">lorem ipsum dolor</p>
+            <p class="paragraph">lorem ipsum dolor</p>
+            <h2 id="show-prs"></h2>
+            <nav>
+                <button class="btn btn1">Button 1</button>
+                <button class="btn btn2">Button 2</button>
+                <button class="btn btn3">Button 3</button>
+            </nav>
+        </section>
+    </main>
+    <script>
+        //change DOM (document object model)
+        /* getElementById */
+
+        const show_year   = document.getElementById('show-year')
+        const show_dpt = document.getElementById('show-deport')
+        const show_prs    = document.getElementById('show-prs')
+        let today       = new Date
+        show_year.textContent = `Current year ${today.getFullYear()}`
+
+        /* getElementsByTagName */
+        const num_dpt = document.getElementsByTagName('li')
+        show_dpt.textContent = `There are ${num_dpt.length} Deports`
+        show_dpt.textContent += `Last deport is ${num_dpt[num_dpt.length-1].TextDecoder}`
+        
+        /* getElementsByClassName */
+        const num_prs = document.getElementsByClassName('paragraph')
+        num_prs[num_prs.length-1].style.color = '#f1ce3f99'
+        show_prs.textContent = `paragraphs contains class: ${num_prs[0].className}`
+
+        /* QuerySelector / QuerySelectorAll */
+        const btn1    = document.querySelector('button.btn1')
+        const all_btn = document.querySelectorAll('button.btn')
+        btn1.style.backgroundColor = '#f1ce3f99'
+
+        all_btns.forEach(element => {
+            element.style.borderRadius = '10px 0px'
+        })
+
+        //all_btns[0].style.borderRadius = '10px 0px'
+        //all_btns[1].style.borderRadius = '10px 0px'
+        //all_btns[2].style.borderRadius = '10px 0px'
+    </script>
+</body>
+</html>
