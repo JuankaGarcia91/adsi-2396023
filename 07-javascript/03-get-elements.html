@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/master.css">
     <title>Get Elements</title>
     <style>
         nav {
@@ -37,7 +37,6 @@
         </header>
         <section>
             <h2 id="show-year"></h2>
-
             <ul>
                 <li>Futboll</li>
                 <li>Bascketball</li>
@@ -47,6 +46,7 @@
             <h2 id="show-deport"></h2>
             <p class="paragraph">lorem ipsum dolor</p>
             <p class="paragraph">lorem ipsum dolor</p>
+            
             <h2 id="show-prs"></h2>
             <nav>
                 <button class="btn btn1">Button 1</button>
@@ -62,12 +62,13 @@
         const show_year   = document.getElementById('show-year')
         const show_dpt = document.getElementById('show-deport')
         const show_prs    = document.getElementById('show-prs')
+        
         let today       = new Date
         show_year.textContent = `Current year ${today.getFullYear()}`
 
         /* getElementsByTagName */
         const num_dpt = document.getElementsByTagName('li')
-        show_dpt.textContent = `There are ${num_dpt.length} Deports`
+        show_dpt.textContent = `There are ${num_dpt.length} Deports `
         show_dpt.textContent += `Last deport is ${num_dpt[num_dpt.length-1].TextDecoder}`
         
         /* getElementsByClassName */
@@ -78,7 +79,7 @@
         /* QuerySelector / QuerySelectorAll */
         const btn1    = document.querySelector('button.btn1')
         const all_btn = document.querySelectorAll('button.btn')
-        btn1.style.backgroundColor = '#f1ce3f99'
+        btn1.style.backgroundColor = '#960000'
 
         all_btns.forEach(element => {
             element.style.borderRadius = '10px 0px'
