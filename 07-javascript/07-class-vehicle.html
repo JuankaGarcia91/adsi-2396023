@@ -5,56 +5,290 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Vehicle</title>
-    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/master1.css">
     <style>
-        main {
+        main {            
             height: 680px ;
-            width: 500px; 
-            *border: 4px solid red;
-            background: url(img/vehicle/02-Mockup.svg) no-repeat;
-        }
-
-        header h1 a:is(:link,:visited),
-        header h1 {
-            color: #4f6d7a;
-        }
-
-        header h1 small {
-            font-weight: 200;
-        }
+            width: 416px; 
+            border: 2px solid red;            
+        } 
 
         section {
             position: relative;
             background-color: #fff00000;
         }
 
-        section button.btn__dark {
-            background: url();
+        header h1 {
+            background-color: #be161600;
+            border-bottom: 0px;
+            
+        }
+
+        header h1 a svg {
+            position: relative;
+            right: 90px;
+            color: #4f6d7a;
+        }
+        
+        header h1 a:hover {
+            transform: translateX(-30px);
+        }
+
+        /* Dark Mode */
+        main.dark {
+            background: url(img/vehicle/02-Mockup.svg) no-repeat center;
+        }
+        main.dark section button.btn_mode {
+            background: url(images/vehicle/btn-light.svg) no-repeat center;
+        }
+        main.dark header h1 a:is(:link,:visited:focus),
+        main.dark header h1,
+        main.dark h2,
+        main.dark div.attributes {
+            color: #c0d6df;
+        }
+        main.dark div.attributes div.brand {
+            background: url(images/vehicle/brand-dark.svg) no-repeat center;
+        }
+        main.dark div.attributes div.refer {
+            background: url(images/vehicle/refer-dark.svg) no-repeat center;
+        }
+        main.dark div.attributes div.model {
+            background: url(images/vehicle/model-dark.svg) no-repeat center;
+        }
+        main.dark div.attributes div.color {
+            background: url(images/vehicle/color-dark.svg) no-repeat center;
+        }
+        main.dark figure.landscape {
+            background-color: #0005;
+        }
+        main.dark figure.landscape button.prev {
+            background: url(images/vehicle/btn-prev-dark.svg) no-repeat center;
+        }
+        main.dark figure.landscape button.next {
+            background: url(images/vehicle/btn-next-dark.svg) no-repeat center;
+        }
+        main.dark div.methods button.on {
+            background: url(images/vehicle/btn-on-dark.svg) no-repeat center;
+        }
+        main.dark div.methods button.fw {
+            background: url(images/vehicle/btn-fw-dark.svg) no-repeat center;
+        }
+        main.dark div.methods button.stop {
+            background: url(images/vehicle/btn-stop-dark.svg) no-repeat center;
+        }
+        main.dark div.methods button.bw {
+            background: url(images/vehicle/btn-bw-dark.svg) no-repeat center;
+        }
+        main.dark div.methods button.off {
+            background: url(images/vehicle/btn-off-dark.svg) no-repeat center;
+        }
+        main.dark div.methods button.on.active {
+            background: url(images/vehicle/btn-on-dark-act.svg) no-repeat center;
+        }
+        main.dark div.methods button.fw.active {
+            background: url(images/vehicle/btn-fw-dark-act.svg) no-repeat center;
+        }
+        main.dark div.methods button.stop.active {
+            background: url(images/vehicle/btn-stop-dark-act.svg) no-repeat center;
+        }
+        main.dark div.methods button.bw.active {
+            background: url(images/vehicle/btn-bw-dark-act.svg) no-repeat center;
+        }
+        main.dark div.methods button.off.active {
+            background: url(images/vehicle/btn-off-dark-act.svg) no-repeat center;
+        }
+
+        /* Light Mode */
+        main {
+            background: url(img/vehicle/fondo.png) no-repeat center;
+            transition: all 0.4s ease-in;
+            border-radius: 20px;
+        }
+
+        header h1 a:is(:link,:visited:focus),
+        header h1 {
+            color: #4f6d7a;
+            top: 2px;            
+        }
+        
+        header h1 small {
+            font-weight: 200;            
+        }
+
+        section {
+            position: relative;
+            top: 19px;          
+        }
+        section button.btn_mode {
+            background: url(images/vehicle/btn-dark.svg) no-repeat center;
             border: none;
+            cursor: pointer;
             height: 66px;
             position: absolute;
             top: -72px;
             right: 20px;
             width: 62px;
-            cursor: pointer;
             transition: transform 0.2s ease-in;
         }
-
-        section button.btn__dark:is(:hover) {
+        section button.btn_mode:is(:hover) {
             transform: scale(0.9);
         }
-        header h1 {
-            background-color: #fff00000;
-            border-bottom: 0px;
+        main h2 {
+            border: none;
+            text-align: left;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 30px;
+            padding-bottom: 0;
+            position: absolute;
+            left: 24px;
+            color: #4f6d7a;
         }
-        header h1 a svg {
+        main h2.subtitle1 {
+            top: -20px;
+        }
+        main h2.subtitle2 {
+            top: 444px;
+        }
+        div.attributes {
+            color: #4f6d7a;
+            font-weight: 300;
+            font-size: 14px;
+            margin: 14px auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            text-indent: 10px;
+            line-height: 6rem;
+            width: 360px;
+        }
+        div.attributes div {
+            width: 173px;
+            height: 68px;
+        }
+        div.attributes div.brand {
+            background: url(images/vehicle/brand.svg) no-repeat center;
+        }
+        div.attributes div.refer {
+            background: url(images/vehicle/refer.svg) no-repeat center;
+        }
+        div.attributes div.model {
+            background: url(images/vehicle/model.svg) no-repeat center;
+        }
+        div.attributes div.color {
+            background: url(images/vehicle/color.svg) no-repeat center;
+        }
+        figure.landscape {
+            background-color: #fff5;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            height: 260px;
+            width: 360px;
+        }
+        figure.landscape button {
+            cursor: pointer;
+            border: none;
+            height: 48px;
+            width: 48px;
+            transition: transform 0.2s ease-in;
+        }
+        figure.landscape button.prev:is(:hover) {
+            transform: translateX(-5px);
+        }
+        figure.landscape button.next:is(:hover) {
+            transform: translateX(5px);
+        }
+        figure.landscape button.prev {
+            background: url(images/vehicle/btn-prev.svg) no-repeat center;
+        }
+        figure.landscape button.next {
+            background: url(images/vehicle/btn-next.svg) no-repeat center;
+        }
+
+        figure img.car {
+            border: 2px solid red;
             position: relative;
-            right: 100px;
+            bottom: -40px;
         }
-        header h1 a:hover {
-            transform: translateX(-10px);
+
+        div.methods {
+            margin: 44px auto 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 360px;
         }
-        
+        div.methods button {
+            border: none;
+            cursor: pointer;
+            height: 66px;
+            width: 62px;
+            transition: transform 0.2s ease-in;
+        }
+        div.methods button:is(:hover) {
+            transform: scale(0.9);
+        }
+        div.methods button.on {
+            background: url(images/vehicle/btn-on.svg) no-repeat center;
+        }
+        div.methods button.fw {
+            background: url(images/vehicle/btn-fw.svg) no-repeat center;
+        }
+        div.methods button.stop {
+            background: url(images/vehicle/btn-stop.svg) no-repeat center;
+        }
+        div.methods button.bw {
+            background: url(images/vehicle/btn-bw.svg) no-repeat center;
+        }
+        div.methods button.off {
+            background: url(images/vehicle/btn-off.svg) no-repeat center;
+        }
+        /* Actives */
+        div.methods button.on.active {
+            background: url(images/vehicle/btn-on-act.svg) no-repeat center;
+        }
+        div.methods button.fw.active {
+            background: url(images/vehicle/btn-fw-act.svg) no-repeat center;
+        }
+        div.methods button.stop.active {
+            background: url(images/vehicle/btn-stop-act.svg) no-repeat center;
+        }
+        div.methods button.bw.active {
+            background: url(images/vehicle/btn-bw-act.svg) no-repeat center;
+        }
+        div.methods button.off.active {
+            background: url(images/vehicle/btn-off-act.svg) no-repeat center;
+        }
+
+        main.animate {
+            animation: animMain 0.4s ease-in 1;
+        }
+
+        @keyframes animMain {
+            0% {                
+                transform: scale(1);
+            }
+            50% {                
+                transform: scale(0.9);
+            }
+            100% {                
+                transform: scale(1);
+            }
+        }
+
+        img.car.on {
+            animation: animCar 0.2s linear infinite;
+        }
+
+        @keyframes animCar {
+            0%, 100% { transform: translateY(0);}
+            5% { transform: translateY(-4px);}
+        }
 
     </style> 
 </head>
@@ -65,38 +299,91 @@
                 <a href="index.html">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
-                      </svg>
+                    </svg>
                 </a>
-                <small> Class  </small>Vehicle
+                <small>class</small>Vehicle
             </h1>
         </header>
         <section>
-            <button class="btn__dark"></button>
+            <button class="btn_mode"></button>
+            <h2 class="subtitle1">Attributes:</h2>
+            <div class="attributes">
+                <div class="brand"></div>
+                <div class="refer"></div>
+                <div class="model"></div>
+                <div class="color"></div>
+            </div>
+            <figure class="landscape">
+                <button class="prev"></button>
+                <img src="" class="car">
+                <button class="next"></button>
+            </figure>
+            <h2 class="subtitle2">Methods:</h2>
+            <div class="methods">
+                <button class="on"></button>
+                <button class="fw"></button>
+                <button class="stop"></button>
+                <button class="bw"></button>
+                <button class="off active"></button>
+            </div>
         </section>
     </main>
     <script>
+        const main     = document.querySelector('main')
+        const btn_mode = document.querySelector('.btn_mode')
+
+        const btn_on   = document.querySelector('.on')
+        const btn_fw   = document.querySelector('.fw')
+        const btn_stop = document.querySelector('.stop')
+        const btn_bw   = document.querySelector('.bw')
+        const btn_off  = document.querySelector('.off')
+        const btns_methods = document.querySelectorAll('.methods button')
+
+        const e_brand  = document.querySelector('.brand') 
+        const e_refer  = document.querySelector('.refer') 
+        const e_model  = document.querySelector('.model') 
+        const e_color  = document.querySelector('.color')
+        const e_image  = document.querySelector('.car') 
+
+        var index_attr = 0
+
+        const btn_prev = document.querySelector('.prev')
+        const btn_next = document.querySelector('.next')
+
+
+        // Logic //
+        var engine = false
+
+        // Array Object//
         const vehicles = [
-            {
-                brand: 'Ferrari',
-                refer: '812GTS',
-                model: 2020,
-                color: 'Orange',
-                image: 'img/vehicle/car01.png'
-            },
-            {
-                brand: 'Ferrari',
-                refer: 'clio',
-                model: 2020,
-                color: 'Black',
-                image: 'img/vehicle/car01.png'
-            },
-            {
-                brand: 'Ferrari',
-                refer: 'clio',
-                model: 2020,
-                color: 'Red',
-                image: 'img/vehicle/car01.png'
-            },
+                { 
+                    brand: 'Toyota',  
+                    refer: 'Yaris',  
+                    model: 2020, 
+                    color: 'Orange', 
+                    image: 'images/vehicle/car01.png' 
+                },
+                { 
+                    brand: 'Renault', 
+                    refer: 'Clio',   
+                    model: 2018, 
+                    color: 'Green',  
+                    image: 'images/vehicle/car02.png' 
+                },
+                { 
+                    brand: 'Ford',    
+                    refer: 'Fiesta', 
+                    model: 2016, 
+                    color: 'Blue',   
+                    image: 'images/vehicle/car03.png' 
+                },
+                { 
+                    brand: 'Fiat',    
+                    refer: '500',    
+                    model: 2007, 
+                    color: 'Red',    
+                    image: 'images/vehicle/car04.png' 
+                }
         ]
 
         class Vehicle {
@@ -107,19 +394,100 @@
                 this.color = color
                 this.image = image
             }
+
             getInfo() {
-                return `The brand is: ${this.brand}`
+                //return `The brand is: ${this.brand}`
+                e_brand.textContent = this.brand
+                e_refer.textContent = this.refer
+                e_model.textContent = this.model
+                e_color.textContent = this.color
+                e_image.setAttribute('src',this.image)
+            }
+
+            static startEngine() {
+                if(!engine) {
+                    e_image.classList.add('on')
+                    engine == true
+                }
+            }
+
+            static offEngine() {
+                if(engine) {
+                    e_image.classList.remove(on)
+                    engine = false
+                }
             }
         }
 
-        const vh = new Vehicle(vehicles[0].brand,
-                               vehicles[0].refer,
-                               vehicles[0].model,
-                               vehicles[0].color,
-                               vehicles[0].image)
+        // Actions
+        btn_mode.addEventListener('click', e=> {
+            e.preventDefault()
+            e.stopPropagation()
+            main.classList.toggle('dark')
+        })
+        btn_on.addEventListener('click', (event) => {
+            removeActives()
+            Vehicle.startEngine()
+            btn_on.classList.add('active')
+        })
+        btn_fw.addEventListener('click', (event) => {
+            removeActives()
+            btn_fw.classList.add('active')
+        })
+        btn_stop.addEventListener('click', (event) => {
+            removeActives()
+            btn_stop.classList.add('active')
+        })
+        btn_bw.addEventListener('click', (event) => {
+            removeActives()
+            btn_bw.classList.add('active')
+        })
+        btn_off.addEventListener('click', (event) => {
+            removeActives()
+            Vehicle.offEngine()
+            btn_off.classList.add('active')
+        })
+        btn_prev.addEventListener('click', (event) => {
+            if (index_attr > 0) {               
+                index_attr--
+                animateMain()
+                showAttributes()
+            }
+        })
+        btn_next.addEventListener('click', (event) => {
+            if (index_attr < vehicles.length-1) {
+                index_attr++
+                animateMain()
+                showAttributes()
+            }
+        })
 
-        console.log(vh)
-        console.log(vh.getInfo())
+        // Functions
+        function animateMain() {
+            main.classList.add ('animate')
+            setTimeout(() => {
+                main.classList.remove('animate')
+            },500)
+        }
+
+        function removeActives() {
+            btns_methods.forEach(element => {
+                element.classList.remove('active')
+            })
+        }
+        function showAttributes() {
+            // New Vehicle 
+            let vh = new Vehicle(vehicles[index_attr].brand, 
+                                 vehicles[index_attr].refer, 
+                                 vehicles[index_attr].model, 
+                                 vehicles[index_attr].color,
+                                 vehicles[index_attr].image)
+            // Access to Methods
+            vh.getInfo()
+        }
+        showAttributes()
+        //console.log(vh)
+        //console.log(vh.getInfo())
     </script>
 </body>
-</html>
+</html>   
