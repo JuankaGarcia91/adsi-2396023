@@ -9,8 +9,8 @@
     <style>
         main {            
             height: 680px ;
-            width: 416px; 
-            border: 2px solid red;            
+            width: 416px;
+                        
         } 
 
         section {
@@ -121,12 +121,12 @@
             top: 19px;          
         }
         section button.btn_mode {
-            background: url(images/vehicle/btn-dark.svg) no-repeat center;
+            background: url(img/vehicle/btn-mode.png) no-repeat center;
             border: none;
             cursor: pointer;
             height: 66px;
             position: absolute;
-            top: -72px;
+            top: -100px;
             right: 20px;
             width: 62px;
             transition: transform 0.2s ease-in;
@@ -165,23 +165,34 @@
             width: 360px;
         }
         div.attributes div {
-            width: 173px;
+            width: 190px;
             height: 68px;
         }
         div.attributes div.brand {
-            background: url(images/vehicle/brand.svg) no-repeat center;
+            background: url(img/vehicle/Brand.png) no-repeat center;
+            position: absolute;
+            top: 30px;
+            left: 13px;
         }
         div.attributes div.refer {
-            background: url(images/vehicle/refer.svg) no-repeat center;
+            background: url(img/vehicle/Reference.png) no-repeat center;
+            position: absolute;
+            top: 30px;
+            left: 210px;
         }
         div.attributes div.model {
-            background: url(images/vehicle/model.svg) no-repeat center;
+            background: url(img/vehicle/Model.png) no-repeat center;
+            position: absolute;
+            top: 105px;
+            left: 13px;
         }
         div.attributes div.color {
-            background: url(images/vehicle/color.svg) no-repeat center;
+            background: url(img/vehicle/Color.png) no-repeat center;
+            position: absolute;
+            top: 105px;
+            left: 210px;
         }
-        figure.landscape {
-            background-color: #fff5;
+        figure.landscape {            
             border-radius: 6px;
             display: flex;
             justify-content: space-between;
@@ -189,6 +200,10 @@
             margin: 0 auto;
             height: 260px;
             width: 360px;
+            z-index: 3;
+            position: absolute;
+            top: 185px;
+            left: 27px;
         }
         figure.landscape button {
             cursor: pointer;
@@ -210,10 +225,12 @@
             background: url(images/vehicle/btn-next.svg) no-repeat center;
         }
 
-        figure img.car {
-            border: 2px solid red;
+        figure img.car {            
             position: relative;
+            height: 200px;
             bottom: -40px;
+            z-index: 4;
+            top: 80px;
         }
 
         div.methods {
@@ -234,19 +251,34 @@
             transform: scale(0.9);
         }
         div.methods button.on {
-            background: url(images/vehicle/btn-on.svg) no-repeat center;
+            background: url(img/vehicle/play.png) no-repeat center;
+            position: absolute;
+            top: 490px;
         }
         div.methods button.fw {
-            background: url(images/vehicle/btn-fw.svg) no-repeat center;
+            background: url(img/vehicle/next.png) no-repeat center;
+            position: absolute;
+            top: 490px;
+            left: 100px;
         }
         div.methods button.stop {
-            background: url(images/vehicle/btn-stop.svg) no-repeat center;
+            background: url(img/vehicle/stop.png) no-repeat center;
+            position: absolute;
+            top: 490px;
+            left: 330px;
         }
         div.methods button.bw {
-            background: url(images/vehicle/btn-bw.svg) no-repeat center;
+            background: url(img/vehicle/next2.png) no-repeat center;
+            position: absolute;
+            top: 490px;
+            left: 170px;
         }
         div.methods button.off {
-            background: url(images/vehicle/btn-off.svg) no-repeat center;
+            background: url(img/vehicle/pausa.png) no-repeat center;
+            position: absolute;
+            top: 490px;
+            left: 240px;
+            
         }
         /* Actives */
         div.methods button.on.active {
@@ -290,6 +322,57 @@
             5% { transform: translateY(-4px);}
         }
 
+        figure.parallax {
+            border: 5px solid rgb(230, 207, 0);
+            width: 360px;            
+            height: 250px;
+            position: absolute;
+            top: 170px;
+            left: -17px;
+            border-radius: 30px;
+            overflow: hidden ;
+            z-index: 1;
+        }
+
+        figure.parallax div {
+            position: absolute;
+            height: 250px;
+            top: 0;
+            left: 0;
+            width: 720px;            
+        }
+
+        figure.parallax div.layer1 {
+            background: url(img/vehicle/layer1.svg) repeat-x;
+            z-index: 2;
+            position: absolute;
+            top: 82px;
+        }
+
+        figure.parallax div.layer2 {
+            background: url(img/vehicle/layer2.svg) repeat-x;
+            z-index: 1;
+        }
+
+        figure.parallax.play div.layer1 {
+            animation: 5s animLayers linear infinite;
+        }
+
+        figure.parallax.play div.layer2 {
+            animation: 10s animLayers linear infinite;
+        }
+
+        @keyframes animLayers {            
+
+            100% {
+                background-position: -720px;
+            }
+        }
+
+        figure.parallax.play.stop div.layer1,
+        figure.parallax.play.stop div.layer2 {
+            animation-play-state: paused;
+        }
     </style> 
 </head>
 <body>
@@ -313,6 +396,11 @@
                 <div class="model"></div>
                 <div class="color"></div>
             </div>
+            <figure class="parallax">
+                <div class="layer1"></div>
+                <div class="layer2"></div>
+                <div class="layer3"></div>
+            </figure>
             <figure class="landscape">
                 <button class="prev"></button>
                 <img src="" class="car">
@@ -350,18 +438,21 @@
         const btn_prev = document.querySelector('.prev')
         const btn_next = document.querySelector('.next')
 
+        const parallax = document.querySelector('.parallax')
+
 
         // Logic //
         var engine = false
+        var moveon = false
 
         // Array Object//
         const vehicles = [
                 { 
-                    brand: 'Toyota',  
-                    refer: 'Yaris',  
+                    brand: 'Ferrari',  
+                    refer: 'Carrera',  
                     model: 2020, 
-                    color: 'Orange', 
-                    image: 'images/vehicle/car01.png' 
+                    color: 'Rojo', 
+                    image: 'img/vehicle/ferrari.png'
                 },
                 { 
                     brand: 'Renault', 
@@ -404,18 +495,25 @@
                 e_image.setAttribute('src',this.image)
             }
 
-            static startEngine() {
-                if(!engine) {
-                    e_image.classList.add('on')
-                    engine == true
-                }
+            static startEngine() {                
+                e_image.classList.add('on')
+                engine == true                
             }
 
-            static offEngine() {
-                if(engine) {
-                    e_image.classList.remove(on)
-                    engine = false
-                }
+            static offEngine() {                
+                e_image.classList.remove('on')
+                engine = false                
+            }
+
+            static goForward() {                
+                parallax.classList.add('play')
+                parallax.classList.remove('stop')
+                moveon = true                                
+            }
+
+            static stopCar() {
+                parallax.classList.add('stop')
+                moveon = false
             }
         }
 
@@ -426,26 +524,37 @@
             main.classList.toggle('dark')
         })
         btn_on.addEventListener('click', (event) => {
-            removeActives()
-            Vehicle.startEngine()
-            btn_on.classList.add('active')
+            if (!engine){
+                removeActives()
+                Vehicle.startEngine()
+                btn_on.classList.add('active')
+            }            
         })
         btn_fw.addEventListener('click', (event) => {
-            removeActives()
-            btn_fw.classList.add('active')
+            if (engine) {
+                removeActives()
+                Vehicle.goForward()
+                btn_fw.classList.add('active')
+            }
         })
         btn_stop.addEventListener('click', (event) => {
-            removeActives()
-            btn_stop.classList.add('active')
+            if (moveon) {
+                removeActives()
+                Vehicles.stopCar()
+                btn_stop.classList.add('active')
+            }
+            
         })
         btn_bw.addEventListener('click', (event) => {
             removeActives()
             btn_bw.classList.add('active')
         })
         btn_off.addEventListener('click', (event) => {
-            removeActives()
-            Vehicle.offEngine()
-            btn_off.classList.add('active')
+            if (engine && !moveon) {
+                removeActives()
+                Vehicle.offEngine()
+                btn_off.classList.add('active')
+            }            
         })
         btn_prev.addEventListener('click', (event) => {
             if (index_attr > 0) {               
