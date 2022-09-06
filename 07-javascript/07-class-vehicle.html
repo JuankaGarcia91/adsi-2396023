@@ -72,13 +72,13 @@
             background: url(img/vehicle/next2_1.png) no-repeat center;
         }
         main.dark div.methods button.stop {
-            background: url(img/vehicle/stop2.png) no-repeat center;
+            background: url(img/vehicle/pausa2.png) no-repeat center;
         }
         main.dark div.methods button.bw {
             background: url(img/vehicle/next2_4.png) no-repeat center;
         }
         main.dark div.methods button.off {
-            background: url(img/vehicle/pausa2.png) no-repeat center;
+            background: url(img/vehicle/stop2.png) no-repeat center;
         }
         main.dark div.methods button.on.active {
             background: url(img/vehicle/play2_2.png) no-repeat center;
@@ -87,13 +87,18 @@
             background: url(img/vehicle/next2_3.png) no-repeat center;
         }
         main.dark div.methods button.stop.active {
-            background: url(img/vehicle/stop2_1.png) no-repeat center;
+            background: url(img/vehicle/pausa2_1.png) no-repeat center;
         }
         main.dark div.methods button.bw.active {
             background: url(img/vehicle/next2_5.png) no-repeat center;
         }
         main.dark div.methods button.off.active {
-            background: url(img/vehicle/pausa2_1.png) no-repeat center;
+            background: url(img/vehicle/stop2_1.png) no-repeat center;
+        }
+
+        main.dark figure.parallax div.layer2 {
+            background: url(img/vehicle/fondonoche.png) repeat-x;
+            z-index: 1;
         }
 
         /* Light Mode */
@@ -259,7 +264,7 @@
             left: 105px;
         }
         div.methods button.stop {
-            background: url(img/vehicle/stop.png) no-repeat center;
+            background: url(img/vehicle/pausa.png) no-repeat center;
             position: absolute;
             top: 490px;
             left: 330px;
@@ -271,7 +276,7 @@
             left: 180px;
         }
         div.methods button.off {
-            background: url(img/vehicle/pausa.png) no-repeat center;
+            background: url(img/vehicle/stop.png) no-repeat center;
             position: absolute;
             top: 490px;
             left: 255px;
@@ -285,13 +290,13 @@
             background: url(img/vehicle/next_1.png) no-repeat center;
         }
         div.methods button.stop.active {
-            background: url(img/vehicle/stop_1.png) no-repeat center;
+            background: url(img/vehicle/pause_2.png) no-repeat center;
         }
         div.methods button.bw.active {
             background: url(img/vehicle/next_2.png) no-repeat center;
         }
         div.methods button.off.active {
-            background: url(img/vehicle/pause_2.png) no-repeat center;
+            background: url(img/vehicle/stop_1.png) no-repeat center;
         }
 
         main.animate {
@@ -339,12 +344,7 @@
             width: 720px;            
         }
 
-        figure.parallax div.layer1 {
-            background: url(img/vehicle/layer1.svg) repeat-x;
-            z-index: 2;
-            position: absolute;
-            top: 167px;
-        }
+   
 
         figure.parallax div.layer2 {
             background: url(img/vehicle/light.png) repeat-x;
@@ -356,7 +356,7 @@
         }
 
         figure.parallax.play div.layer2 {
-            animation: 10s animLayers linear infinite;
+            animation: 5s animLayers linear infinite;
         }
 
         @keyframes animLayers {            
@@ -369,6 +369,11 @@
         figure.parallax.play.stop div.layer1,
         figure.parallax.play.stop div.layer2 {
             animation-play-state: paused;
+        }
+
+        figure.parallax.reverse div.layer1,
+        figure.parallax.reverse div.layer2 {
+            animation-direction: reverse;
         }
     </style> 
 </head>
@@ -498,6 +503,13 @@
             }
             static goForward() {
                 parallax.classList.add('play')
+                parallax.classList.remove('reverse')
+                parallax.classList.remove('stop')
+                moveon = true
+            }
+            static goBackward() {
+                parallax.classList.add('play')
+                parallax.classList.add('reverse')
                 parallax.classList.remove('stop')
                 moveon = true
             }
@@ -505,6 +517,7 @@
                 parallax.classList.add('stop')
                 moveon = false
             }
+            
         }
 
         // Actions
@@ -521,7 +534,7 @@
             }
         })
         btn_fw.addEventListener('click', (event) => {
-            if (engine) {
+            if (engine && !moveon) {
                 removeActives()
                 Vehicle.goForward()
                 btn_fw.classList.add('active')
@@ -535,8 +548,11 @@
             }
         })
         btn_bw.addEventListener('click', (event) => {
-            removeActives()
-            btn_bw.classList.add('active')
+            if (engine && !moveon){
+                removeActives()
+                Vehicle.goBackward()
+                btn_bw.classList.add('active')  
+            }            
         })
         btn_off.addEventListener('click', (event) => {
             if (engine && !moveon) {
