@@ -7,12 +7,147 @@
     <title>Challenge Calculator</title>
     <link rel="stylesheet" href="css/master2.css"> 
     <style>
+        /* ligth mode */
+
+        main.light {
+            background: url(img/calculadora/fondo-claro.png) no-repeat center;
+        }
+
+        main.light header h1 {
+            color: #000000;
+        }
+
+        main.light header h1 a svg {
+            color: #000000;
+        }
+        
+        main.light header button.mode {
+            background: url(img/calculadora/oscuro.svg) no-repeat center;
+            margin-top: 84px;            
+        }
+        
+        main.light div.rectangular {
+            background: url(img/calculadora/Rectangle-claro.svg) no-repeat center;
+        }
+
+        main.light div.display output.operation {
+            font-weight: 275;
+            font-size: 28px;
+            color: #000000;
+        }
+
+        main.light div.display output.result {
+            font-weight: 275;
+            font-size: 54px;
+            color: #000000;
+        }
+
+        main.light div.buttons1 button.n7 {
+            background: url(img/calculadora/siete1.svg) no-repeat;
+        }
+
+        main.light div.buttons1 button.n8 {
+            background: url(img/calculadora/ocho1.svg) no-repeat;
+        }
+
+        main.light div.buttons1 button.n9 {
+            background: url(img/calculadora/nueve1.svg) no-repeat;
+        }
+
+        main.light div.buttons1 button.div {
+            background: url(img/calculadora/div1.svg) no-repeat;
+        }
+
+        main.light div.buttons1 button.n4 {
+            background: url(img/calculadora/cuatro1.svg) no-repeat;
+        }
+
+        main.light div.buttons1 button.n5 {
+            background: url(img/calculadora/cinco1.svg) no-repeat;
+        }
+
+        main.light div.buttons1 button.n6 {
+            background: url(img/calculadora/seis1.svg) no-repeat;
+        }
+
+        main.light div.buttons1 button.por {
+            background: url(img/calculadora/por1.svg) no-repeat;
+        }
+
+        main.light div.buttons1 button.n1 {
+            background: url(img/calculadora/uno1.svg) no-repeat;
+        }
+
+        main.light div.buttons1 button.n2 {
+            background: url(img/calculadora/dos1.svg) no-repeat;
+        }
+
+        main.light div.buttons1 button.n3 {
+            background: url(img/calculadora/tres1.svg) no-repeat;
+        }
+
+        main.light div.buttons1 button.men {
+            background: url(img/calculadora/menos1.svg) no-repeat;
+        }
+        
+        main.light div.buttons2 button.n0 {
+            position: relative;
+            left: 53px;
+            height: 75px;
+            width: 75px;
+            border: none;
+            background: url(img/calculadora/cero1.svg) no-repeat;
+        }
+
+        main.light div.buttons2 button.mas {
+            position: relative;
+            top: -2px;
+            left: 210px;
+            height: 75px;
+            width: 75px;
+            border: none;
+            background: url(img/calculadora/mas1.svg) no-repeat;
+        }
+
+        main.light div.buttons2 button.punto {
+            position: relative;            
+            left: 54px;
+            top: -4px;
+            height: 75px;
+            width: 75px;
+            border: none;
+            background: url(img/calculadora/punto1.svg) no-repeat;
+        }
+
+        main.light div.buttons2 button.igual {
+            position: relative;
+            left: -88px;
+            top: -80px;
+            height: 75px;
+            width: 75px;
+            border: none;
+            background: url(img/calculadora/igual1.svg) no-repeat;
+        }
+
+        main.light div.buttons2 button.borrar {            
+            position: relative;           
+            height: 75px;
+            width: 215px;
+            top: -5px;
+            left: 100px;
+            border: none;
+            background: url(img/calculadora/borrar1.svg) no-repeat;
+        }        
+        
+        /* Dark mode */        
+
         main {
-            background: url(img/calculadora/fondo_oscuridad.png);
+            background: url(img/calculadora/fondo-oscuro.png) no-repeat center;
             height: 650px;
             width: 410px;
             color: aliceblue;            
-            border-radius: 20px;           
+            border-radius: 20px; 
+            transition: background 0.5s ease-in;          
         }
 
         header {            
@@ -25,12 +160,12 @@
             background: url(img/calculadora/claro.svg) no-repeat;
             border: none;
             display: block;
-            margin-left: 10px;
+            margin-left: 11px;
             transition: all 0.2s ease-in; 
             margin-top: 90px;         
         }
 
-        header button.mode{
+        header button.mode {
             cursor: pointer;
             transform: scale(1.05);
         }
@@ -71,74 +206,74 @@
             
         }
 
-        div.buttons1 button.clear1 {
+        div.buttons1 button.n7 {
             border: none;
             background: url(img/calculadora/siete.svg) no-repeat;
         }
 
-        div.buttons1 button.clear2 {
+        div.buttons1 button.n8 {
             border: none;
             background: url(img/calculadora/ocho.svg) no-repeat;
         }
 
-        div.buttons1 button.clear3 {
+        div.buttons1 button.n9 {
             border: none;
             background: url(img/calculadora/nueve.svg) no-repeat;
         }
 
-        div.buttons1 button.clear4 {
+        div.buttons1 button.div {
             border: none;
             background: url(img/calculadora/div.svg) no-repeat;
         }
 
-        div.buttons1 button.clear5 {
+        div.buttons1 button.n4 {
             border: none;
             background: url(img/calculadora/cuatro.svg) no-repeat;
         }
 
-        div.buttons1 button.clear6 {
+        div.buttons1 button.n5 {
             border: none;
             background: url(img/calculadora/cinco.svg) no-repeat;
         }
 
-        div.buttons1 button.clear7 {
+        div.buttons1 button.n6 {
             border: none;
             background: url(img/calculadora/seis.svg) no-repeat;
         }
 
-        div.buttons1 button.clear8 {
+        div.buttons1 button.por {
             border: none;
             background: url(img/calculadora/por.svg) no-repeat;
         }
 
-        div.buttons1 button.clear9 {
+        div.buttons1 button.n1 {
             border: none;
             background: url(img/calculadora/uno.svg) no-repeat;
         }
 
-        div.buttons1 button.clear10 {
+        div.buttons1 button.n2 {
             border: none;
             background: url(img/calculadora/dos.svg) no-repeat;
         }
 
-        div.buttons1 button.clear11 {
+        div.buttons1 button.n3 {
             border: none;
             background: url(img/calculadora/tres.svg) no-repeat;
         }
 
-        div.buttons1 button.clear12 {
+        div.buttons1 button.men {
             border: none;
             background: url(img/calculadora/menos.svg) no-repeat;
         }       
 
         div.buttons2 {
-            margin-top: 10px;          
+            margin-top: 8px;          
             height: 200px;            
             display:block;            
             justify-content: center;
         }
 
-        div.buttons2 button.clear13 {
+        div.buttons2 button.n0 {
             position: relative;
             left: 53px;
             height: 75px;
@@ -147,7 +282,7 @@
             background: url(img/calculadora/cero.svg) no-repeat;
         }
 
-        div.buttons2 button.clear14 {
+        div.buttons2 button.mas {
             position: relative;
             top: -2px;
             left: 210px;
@@ -157,7 +292,7 @@
             background: url(img/calculadora/mas.svg) no-repeat;
         }
 
-        div.buttons2 button.clear15 {
+        div.buttons2 button.punto {
             position: relative;            
             left: 54px;
             top: -4px;
@@ -167,7 +302,7 @@
             background: url(img/calculadora/punto.svg) no-repeat;
         }
 
-        div.buttons2 button.clear17 {
+        div.buttons2 button.igual {
             position: relative;
             left: -88px;
             top: -80px;
@@ -177,7 +312,7 @@
             background: url(img/calculadora/igual.svg) no-repeat;
         }
 
-        div.buttons2 button.clear16 {            
+        div.buttons2 button.borrar {            
             position: relative;           
             height: 75px;
             width: 215px;
@@ -205,34 +340,176 @@
         <section>
             <div class="rectangular">
                 <div class="display">
-                    <output class="operation">4.900 + 15.855</output>
-                    <output class="result">0000000</output>
+                    <output class="operation"></output>
+                    <output class="result"></output>
                 </div>
             </div>
             <div class="buttons1">
-                <button class="clear1"></button>
-                <button class="clear2"></button>
-                <button class="clear3"></button>
-                <button class="clear4"></button>
-                <button class="clear5"></button>
-                <button class="clear6"></button>
-                <button class="clear7"></button>
-                <button class="clear8"></button>
-                <button class="clear9"></button>
-                <button class="clear10"></button>
-                <button class="clear11"></button>
-                <button class="clear12"></button>                
+                <button class="n7" data-num="7"></button>
+                <button class="n8" data-num="8"></button>
+                <button class="n9" data-num="9"></button>
+                <button class="div" data-opr="/"></button>
+                <button class="n4" data-num="4"></button>
+                <button class="n5" data-num="5"></button>
+                <button class="n6" data-num="6"></button>
+                <button class="por" data-opr="*"></button>
+                <button class="n1" data-num="1"></button>
+                <button class="n2" data-num="2"></button>
+                <button class="n3" data-num="3"></button>
+                <button class="men" data-opr="-"></button>                
             </div>
             <div class="buttons2">
-                <button class="clear13"></button>
-                <button class="clear14"></button>
-                <button class="clear15"></button>
-                <button class="clear16"></button>
-                <button class="clear17"></button>
+                <button class="n0" data-num="0"></button>
+                <button class="mas" data-opr="+"></button>
+                <button class="punto" data-opr="."></button>
+                <button class="borrar" data-opr=""></button>
+                <button class="igual" data-opr=""></button>
             </div>
         </section>
     </main>
     <script>
+        const mode  = document.querySelector('.mode')
+        const main  = document.querySelector('main')
+        const oper  = document.querySelector('.operation')
+        const clear = document.querySelector('.borrar')
+        const igual = document.querySelector('.igual')
+        const result = document.querySelector('.result')
+        
+        
+        //numbers & operators
+        const nums = document.querySelectorAll('button[data-num]')
+        const oprs = document.querySelectorAll('button[data-opr]')
+
+        //logic
+        var operStatus = false
+        var num1 = 
+
+        //click buttons
+        nums.forEach(element => {
+            element.addEventListener('click', () => {
+                if (oper.textContent.length < 18) {                    
+                    oper.textContent += element.getAttribute('data-num')
+                    operStatus = true                                       
+                }                
+            })
+        });
+
+        oprs.forEach(element => {
+            element.addEventListener('click', () => {
+                if (oper.textContent.length < 18) {
+                    if (operStatus) {
+                        oper.textContent += element.getAttribute('data-opr')
+                        operStatus = false
+                    }                    
+                }                
+            })            
+        });
+
+        mode.addEventListener('click', () =>{
+            main.classList.toggle('light')
+        })
+
+        clear.addEventListener('click', () => {
+            oper.textContent = ''
+        })
+
+        igual.addEventListener('click', () => {
+            showResult = ''
+        })
+        
+
+
+        document.addEventListener('keyup', (event) => {
+            console.log(event.keyCode)
+
+            switch (event.keyCode) {
+                case 96:
+                case 48:
+                    oper.textContent += 0
+                    break;
+
+                case 97:
+                case 49: 
+                    oper.textContent += 1
+                    break;
+                
+                case 98:
+                case 50: 
+                    oper.textContent += 2
+                    break;
+
+                case 99:
+                case 51: 
+                    oper.textContent += 3
+                    break;
+                
+                case 100:
+                case 52: 
+                    oper.textContent += 4
+                    break;
+
+                case 101:
+                case 53: 
+                    oper.textContent += 5
+                    break;
+
+                case 102:
+                case 54: 
+                    oper.textContent += 6
+                    break;
+
+                case 103:
+                case 55: 
+                    oper.textContent += 7
+                    break;
+
+                case 104:
+                case 56: 
+                    oper.textContent += 8
+                    break;
+
+                case 105:
+                case 57: 
+                    oper.textContent += 9
+                    break;
+
+                case 110:
+                case 190: 
+                    oper.textContent += '.'
+                    break;
+
+                case 107:
+                case 187: 
+                    oper.textContent += '+'
+                    break;
+
+                case 109:
+                case 189: 
+                    oper.textContent += '-'
+                    break;
+
+                case 106:
+                case 187: 
+                    oper.textContent += '*'
+                    break;
+
+                case 111: 
+                    oper.textContent += '/'
+                    break;
+
+                case 13: 
+                    oper.textContent += '='
+                    break;
+
+                case 46:                 
+                    oper.textContent += element.getAttribute('clear')
+                    break;
+            }
+        })
+
+
+
+
         
     </script>
 </body>
