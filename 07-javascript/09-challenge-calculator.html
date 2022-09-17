@@ -188,13 +188,13 @@
         div.display output.operation {
             font-weight: 275;
             font-size: 28px;
-            color: #9e9e9e;
+            color: #9e9e9e;            
         }
 
         div.display output.result {
             font-weight: 275;
             font-size: 54px;
-            color: #B6B9C7;
+            color: #B6B9C7;            
         }
 
         div.buttons1 {            
@@ -202,8 +202,15 @@
             gap: 9px;
             justify-content: center;
             grid-template-columns: repeat(4, 70px);
-            grid-template-rows: repeat(3, 75px);
-            
+            grid-template-rows: repeat(3, 75px);            
+        }
+
+        div.buttons1 div.buttons2:visited {
+            transform: scale(3.15);
+        }
+
+        .buttons1 .buttons2:hover {
+            transform: scale(0.15);
         }
 
         div.buttons1 button.n7 {
@@ -368,12 +375,12 @@
         </section>
     </main>
     <script>
-        const mode  = document.querySelector('.mode')
-        const main  = document.querySelector('main')
-        const oper  = document.querySelector('.operation')
-        const clear = document.querySelector('.borrar')
-        const igual = document.querySelector('.igual')
+        const mode   = document.querySelector('.mode')
+        const main   = document.querySelector('main')
+        const oper   = document.querySelector('.operation')
+        const clear  = document.querySelector('.borrar')        
         const result = document.querySelector('.result')
+        const igual  = document.querySelector('.igual')
         
         
         //numbers & operators
@@ -382,49 +389,52 @@
 
         //logic
         var operStatus = false
-        var num1 = 
+         
 
         //click buttons
         nums.forEach(element => {
             element.addEventListener('click', () => {
-                if (oper.textContent.length < 18) {                    
+                if (oper.textContent.length < 19) {                    
                     oper.textContent += element.getAttribute('data-num')
                     operStatus = true                                       
                 }                
             })
-        });
+        })
 
         oprs.forEach(element => {
             element.addEventListener('click', () => {
-                if (oper.textContent.length < 18) {
+                if (oper.textContent.length < 19) {
                     if (operStatus) {
                         oper.textContent += element.getAttribute('data-opr')
                         operStatus = false
                     }                    
                 }                
             })            
-        });
+        })
 
-        mode.addEventListener('click', () =>{
+        mode.addEventListener('click', () => {
             main.classList.toggle('light')
         })
 
         clear.addEventListener('click', () => {
             oper.textContent = ''
+            result.textContent = ''
         })
 
-        igual.addEventListener('click', () => {
-            showResult = ''
-        })
+        igual.addEventListener('click', () => { 
+            showResult ('')
+        })  
         
-
+        function showResult(){
+            result.value = eval (oper.value)
+        }
 
         document.addEventListener('keyup', (event) => {
             console.log(event.keyCode)
 
             switch (event.keyCode) {
                 case 96:
-                case 48:
+                case 48:                    
                     oper.textContent += 0
                     break;
 
@@ -505,12 +515,7 @@
                     oper.textContent += element.getAttribute('clear')
                     break;
             }
-        })
-
-
-
-
-        
+        }) 
     </script>
 </body>
 </html>
