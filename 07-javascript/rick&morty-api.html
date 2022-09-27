@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty API Rest</title>
+    <link rel="stylesheet" href="css/master.css">    
+   <style>    
+        body{
+            background-color: rgb(0, 0, 0);
+            color: rgb(201, 201, 201);
+        }       
+        
+
+        ul.characters{
+            color: #1b1b1b;
+            gap: 1.5rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            list-style: none;
+        }
+
+        li.ficha{
+            background: url(img/portal.png) no-repeat center;
+            background-size: contain;
+            border: 3px solid rgb(97, 97, 97);
+            border-radius: 20px;
+            height: 610px;
+            width: 390px;                           
+        }
+
+        ul.characters h2{
+            margin: 0 auto;
+            padding: 10px;
+            display: flex;
+            background: rgb(168, 214, 0);
+            padding: 5px;
+            border-radius: 15px;
+            font-size: 22px;     
+           
+        }
+
+        ul.characters figure{
+            align-items: center;
+            padding: 10px;
+            display: flex;                                 
+        }
+
+        img {
+            border-radius: 15px;
+        }
+
+        ul.characters div{
+            align-items: center;
+            margin-left: 0px;
+            display: flex;
+            background-color: #3a9200b6;
+            border-radius: 10px;                                 
+        }
+
+        ul.characters h4{
+            align-items: center;
+            margin-left: 30px;                                              
+        }
+
+        ul.characters h4 p {
+            align-items: center;
+            margin-left: 30px;            
+            color: rgb(197, 197, 197);                                  
+        }
+
+        ul.characters button{
+            background-color: rgb(70, 189, 1);           
+            margin-left: 30px;           
+            display: flex;
+            position: relative;
+            left: 15rem;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            color: rgb(0, 0, 0);
+            margin: 10px;
+            margin-top: 20px;
+        }        
+
+        ul.characters button:hover{            
+            background-color: rgb(121, 121, 121);           
+            margin-left: 30px;           
+            display: flex;            
+            left: 15rem;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            margin: 10px;
+            margin-top: 20px;            
+        }
+
+        @media screen and (max-width: 1080px){
+            ul.characters{
+            color: #1b1b1b;
+            gap: 1rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            list-style: none;
+            }
+
+        }
+
+        @media screen and (max-width: 1024px){
+            ul.characters{
+            color: #1b1b1b;
+            gap: 1rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            list-style: none;
+            }
+
+        }
+
+        @media screen and (max-width: 900px){
+            ul.characters{
+            color: #1b1b1b;
+            gap: 1rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            list-style: none;
+            }
+            
+        }
+
+        @media screen and (max-width: 768px){
+            ul.characters{
+            color: #1b1b1b;
+            gap: 1rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            list-style: none;
+            }
+
+        }
+    </style>    
+</head>
+<body>
+    <ul class="characters"></ul>
+
+    <script>
+        const characters = document.querySelector('.characters')
+        const btnShow    = document.querySelectorAll('.btnShow')
+
+        async function getcharacters() {
+
+            for (let i = 1; i <= 40; i++) {
+                let resp  = await fetch('https://rickandmortyapi.com/api/character/' + i)
+                let char = await resp.json()
+            
+                console.log(char)
+                characters.innerHTML += `<li class="ficha"> 
+                                            <h2>${char.id}. ${char.name}</h2>
+                                                <figure>
+                                                    <img src="${char.image}">
+                                                </figure>
+                                                <div>
+                                                    <h4>Gender: <p> ${char.gender}</p></h4>
+                                                    <h4>Status:  <p>${char.status}</p></h4>
+                                                    <h4>Species: <p>${char.species}</p></h4>
+                                                </div>                                            
+                                            <button data-id='${char.id}' class='btnShow'> Show more... </button>                                              
+                                         </li>`
+                
+                if (i == 40) {
+                    addClickEvents()
+                }                          
+            }            
+        }
+
+        function addClickEvents() {
+            const btnShow = document.querySelectorAll('.btnShow')
+            btnShow.forEach(element => {
+                element.addEventListener('click', (e) => {
+                    e.preventDefault()
+                    alert(element.dataset.id)
+                })
+            })
+        }
+
+        getcharacters()
+    </script>    
+</body>
+</html>
